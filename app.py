@@ -7,7 +7,7 @@ CORS(app)
 
 @app.route("/")
 def home():
-    return "<h1>Service is Running!</h1>"
+    return "<h1>Service is Running!!</h1>"
 
 @app.route("/twitter", methods=['POST'])
 def result():
