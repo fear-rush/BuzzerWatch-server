@@ -3,18 +3,25 @@ from datetime import datetime
 import nltk
 import pandas as pd
 import tweepy as tw
+import os
 from deep_translator import GoogleTranslator
 from textblob import TextBlob
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 nltk.download('vader_lexicon')
 from functions import twitter_access, twitter_api, tweets_fetching, text_cleaning, translator, sentiment_determination
+from dotenv import load_dotenv
+
 
 def sentiment(hashtag):
     ###----###
     start = datetime.now()
 
-    twitter_account = pd.read_csv('Twitter Developer Account.csv')
-    consumer_api_key, consumer_api_key_secret, access_token, access_token_secret = twitter_access(twitter_account)
+    # twitter_account = pd.read_csv('Twitter Developer Account.csv')
+    # consumer_api_key, consumer_api_key_secret, access_token, access_token_secret = twitter_access(twitter_account)
+    consumer_api_key = os.getenv("CONSUMER_API_KEY")
+    consumer_api_key_secret = os.getenv("CONSUMER_API_KEY_SECRET")
+    access_token = os.getenv("ACCESS_TOKEN")
+    access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
     api = twitter_api(consumer_api_key, consumer_api_key_secret, access_token, access_token_secret)
 
     raw_tweets_list = tweets_fetching(api, hashtag, 100, since_date='2022-05-28')

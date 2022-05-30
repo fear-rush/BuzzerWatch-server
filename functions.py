@@ -3,6 +3,7 @@ import nltk
 import pandas as pd
 import tweepy as tw
 import os
+from dotenv import load_dotenv
 from deep_translator import GoogleTranslator
 from textblob import TextBlob
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
