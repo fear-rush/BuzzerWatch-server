@@ -5,9 +5,9 @@ from sentiment import sentiment
 app = Flask(__name__)
 CORS(app)
 
-# @app.route("/")
-# def home():
-#     return render_template('index.html')
+@app.route("/")
+def home():
+    return "<h1>Service is Running!</h1>"
 
 @app.route("/twitter", methods=['POST'])
 def result():
