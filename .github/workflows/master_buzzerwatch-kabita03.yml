@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'buzzerwatch-kabita03'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F3243A580EA045AB8193896819712647 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_473C0FDAEDCA4DD7B1C27D4DB056BA71 }}
